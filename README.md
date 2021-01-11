@@ -5,4 +5,4 @@ These projects are created as part of the following training: DCL-208 "Clean Arc
 Please follow the link for the complete training catalog: https://www.deepcloudlabs.com/resources
 
 ## The DCI Architecture
-[go](https://www.infoq.com/presentations/The-DCI-Architecture){:target="_blank" rel="noopener"}
+https://www.infoq.com/presentations/The-DCI-Architecture
