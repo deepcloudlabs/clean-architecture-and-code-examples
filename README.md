@@ -6,3 +6,6 @@ Please follow the link for the complete training catalog: https://www.deepcloudl
 
 ## The DCI Architecture
 https://www.infoq.com/presentations/The-DCI-Architecture
+
+## Keynote: Architecture the Lost Years by Robert Martin
+https://www.youtube.com/watch?v=WpkDN78P884
