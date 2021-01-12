@@ -1,7 +1,5 @@
 package com.example;
 
-import static com.example.utils.NumberUtils.even;
-
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;

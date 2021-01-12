@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class HowToAvoidLoopsAndIfStatements {
 
 	public static void main(String[] args) {

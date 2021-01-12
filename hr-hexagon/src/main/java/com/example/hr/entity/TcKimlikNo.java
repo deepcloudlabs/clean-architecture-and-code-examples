@@ -1,6 +1,5 @@
 package com.example.hr.entity;
 
-import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 import java.util.WeakHashMap;
@@ -13,9 +12,10 @@ import java.util.WeakHashMap;
 // Value Object (DDD) --> Immutable --> Effective Java
 public final class TcKimlikNo {
 	private final String value;
-	private static Map<String, Object> cache = 
-			              // Collections.synchronizedMap(new WeakHashMap<>()); // (2) Collections.synchronizedXYZ()
-     	                  new WeakHashMap<>() ; // (1) Thread Safe?
+	private static Map<String, Object> cache =
+			// Collections.synchronizedMap(new WeakHashMap<>()); // (2)
+			// Collections.synchronizedXYZ()
+			new WeakHashMap<>(); // (1) Thread Safe?
 
 	private TcKimlikNo(String value) {
 		this.value = value;
@@ -35,7 +35,7 @@ public final class TcKimlikNo {
 			if (Objects.nonNull(id))
 				return id;
 			TcKimlikNo tcKimlikNo = new TcKimlikNo(value);
-			cache.put(value, tcKimlikNo);			
+			cache.put(value, tcKimlikNo);
 			return tcKimlikNo;
 		}
 	}
