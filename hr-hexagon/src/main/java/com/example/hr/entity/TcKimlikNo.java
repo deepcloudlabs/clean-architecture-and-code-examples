@@ -1,5 +1,10 @@
 package com.example.hr.entity;
 
+import java.util.Collections;
+import java.util.Map;
+import java.util.Objects;
+import java.util.WeakHashMap;
+
 /**
  * 
  * @author Binnur Kurt <binnur.kurt@gmail.com>
@@ -8,6 +13,9 @@ package com.example.hr.entity;
 // Value Object (DDD) --> Immutable --> Effective Java
 public final class TcKimlikNo {
 	private final String value;
+	private static Map<String, Object> cache = 
+			              // Collections.synchronizedMap(new WeakHashMap<>()); // (2) Collections.synchronizedXYZ()
+     	                  new WeakHashMap<>() ; // (1) Thread Safe?
 
 	private TcKimlikNo(String value) {
 		this.value = value;
@@ -17,12 +25,19 @@ public final class TcKimlikNo {
 		return value;
 	}
 
-	public static TcKimlikNo of(String value) {
+	public static /* synchronized */ TcKimlikNo of(String value) {
 		// Validation
 		if (!isValid(value))
 			throw new IllegalArgumentException("This is not a valid identity");
-		// Object Caching
-		return new TcKimlikNo(value);
+		synchronized (cache) {
+			var id = (TcKimlikNo) cache.get(value);
+			// Object Caching
+			if (Objects.nonNull(id))
+				return id;
+			TcKimlikNo tcKimlikNo = new TcKimlikNo(value);
+			cache.put(value, tcKimlikNo);			
+			return tcKimlikNo;
+		}
 	}
 
 	@Override
