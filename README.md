@@ -10,4 +10,3 @@ https://www.infoq.com/presentations/The-DCI-Architecture
 ## Keynote: Architecture the Lost Years by Robert Martin
 https://www.youtube.com/watch?v=WpkDN78P884
 
-https://we.tl/t-M6hVZn0XSI
